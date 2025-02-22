@@ -1,0 +1,45 @@
+{
+  "name": "yassghn.neocities.org",
+  "version": "1.0.0",
+  "description": "from, yassghn. with love. <333",
+  "main": "src/index.html",
+  "type": "module",
+  "scripts": {
+    "gulp": "gulp",
+    "build": "npm run gulp",
+    "watch": "npm run gulp watch",
+    "clean": "npm run gulp clean",
+    "serve": "npm run gulp serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yassghn/yassghn.neocities.org.git"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "sass",
+    "js",
+    "tbny"
+  ],
+  "author": "yassghn@protonmail.com",
+  "license": "SEE LICENSE IN license",
+  "bugs": {
+    "url": "https://github.com/yassghn/yassghn.neocities.org/issues"
+  },
+  "homepage": "https://github.com/yassghn/yassghn.neocities.org#readme",
+  "devDependencies": {
+    "del": "^8.0.0",
+    "gulp": "^5.0.0",
+    "gulp-autoprefixer": "^9.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-replace": "^1.1.4",
+    "gulp-sass": "^6.0.0",
+    "polka": "^0.5.2",
+    "sass": "^1.85.0",
+    "serve-static": "^1.16.2"
+  },
+  "dependencies": {
+    "animatelo": "^1.0.3"
+  }
+}
