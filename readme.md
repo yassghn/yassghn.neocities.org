@@ -1,23 +1,28 @@
-# yassghn.neocities.org
+# yassghn.neocities.org <img style="height: 46px; width: 46px;" align="right" alt-text="yassghn.neocities.org icon" titles="yassghn.neocities.org" src="https://www.svgrepo.com/download/97753/heart-wings.svg"/>
 
 *from, yassghn: with love. <333*
 
 ## setup
 
-``$ git clone git@github.com:yassghn/yassghn.neocities.org``
+```gitignore
+git clone git@github.com:yassghn/yassghn.neocities.org
+```
 
-``$ cd yassghn.neocities.org/``
+```boo
+$ cd yassghn.neocities.org/
 
-``$ npm i``
+$ npm i
 
-``$ npm run build``
+$ npm run build
+```
 
 ## dev
 
-``$ npm run watch``
+```boo
+$ npm run watch
+```
 
 > http://localhost:3000/
-
 
 ## license
 
