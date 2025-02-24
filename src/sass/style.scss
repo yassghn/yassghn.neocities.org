@@ -84,11 +84,11 @@ span.name-text {
   font-family: "Trebuchet MS", sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 70px;
+  font-size: 60px;
   letter-spacing: 2px;
   line-height: 45px;
   @include break(xs) {
-    font-size: 85px;
+    font-size: 65px;
     line-height: 50px;
   }
   @include break(sm) {
