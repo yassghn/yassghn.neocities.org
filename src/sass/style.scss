@@ -1,8 +1,49 @@
 // style.scss
+@use "sass:map";
 
 // theme
 $bg-color: rgb(27, 27, 27);
 $font-color: #cac4c4;
+
+// screen size break points
+$breakpoints: (
+  // xss is accounted for as base design
+  // mobile first
+  xxs: 360px,
+  xs: 428px,
+  sm: 768px,
+  md: 820px,
+  lg: 1280px,
+  xl: 1920px
+);
+
+// make previous width easy to get
+$bpMins: (
+  xs: xss,
+  sm: xs,
+  md: sm,
+  lg: md,
+  xl: lg,
+);
+
+// responsive mixin
+@mixin break($breakpoint) {
+   //check if we passed a correct break point
+  @if map.has-key($breakpoints, $breakpoint) {
+    // get previous max
+    $bpMin: map.get($bpMins, $breakpoint);
+    // new min is previous max+1
+    $min-width: map.get($breakpoints, $bpMin) + 1;
+    // get current max
+    $max-width: map.get($breakpoints, $breakpoint);
+    // set media query
+    @media only screen and (min-width: $min-width) and (max-width: $max-width) {
+      @content;
+    }
+  } @else {
+    @error 'invalid breakpoint: #{$breakpoint}.';
+  }
+}
 
 * {
   padding: 0;
@@ -13,7 +54,7 @@ body {
   background-color: $bg-color;
   color: $font-color;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: hidden;
   user-select: none;
 }
 
@@ -31,21 +72,55 @@ div#content-container {
 }
 
 div.name-piece-container {
-  display: inline-block;
-  margin: 0 5px;
+  @include break(lg) {
+    display: inline-block;
+  }
+  @include break(xl) {
+    display: inline-block;
+  }
 }
 
 span.name-text {
-  font-family: 'Trebuchet MS', sans-serif;
+  font-family: "Trebuchet MS", sans-serif;
   font-style: normal;
-  font-display: swap;
   font-weight: 500;
-  font-size: 100px;
-  line-height: 0px;
-  letter-spacing:2px;
+  font-size: 70px;
+  letter-spacing: 2px;
+  line-height: 45px;
+  @include break(xs) {
+    font-size: 85px;
+    line-height: 50px;
+  }
+  @include break(sm) {
+    font-size: 130px;
+    line-height: 85px;
+  }
+  @include break(md) {
+    font-size: 155px;
+    line-height: 95px;
+  }
+  @include break(lg) {
+    font-size: 125px;
+    line-height: 0px;
+  }
+  @include break(xl) {
+    font-size: 175px;
+  }
 }
 
 #middle-name-container span {
   position: relative;
-  top: 17px;
+  top: 10px;
+  @include break(xs) {
+    top: 15px;
+  }
+  @include break(sm) {
+    top: 25px;
+  }
+  @include break(lg) {
+    top: 25px;
+  }
+  @include break(xl) {
+    top: 35px;
+  }
 }
