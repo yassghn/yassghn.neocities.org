@@ -9,6 +9,7 @@
     "build": "npm run gulp",
     "watch": "npm run gulp watch",
     "clean": "npm run gulp clean",
+    "cleanbuild": "npm run clean && npm run build",
     "serve": "npm run gulp serve"
   },
   "repository": {
